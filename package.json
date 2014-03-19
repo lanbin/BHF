@@ -1,0 +1,9 @@
+{
+  "name": "demo",
+  "devDependencies": {
+      "grunt": "",
+      "grunt-contrib-watch": "",
+      "grunt-contrib-connect": "",
+      "connect-livereload": ""
+  }
+}
