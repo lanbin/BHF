@@ -1,6 +1,9 @@
 body {
     background-color: #EEE;
-    font: 1.5em/1.5em"arial";
+    font: 1.5em/1.5em"微软雅黑";
+}
+* {
+    font-family:"微软雅黑";
 }
 *:focus {
     outline: none;
@@ -16,7 +19,7 @@ ul {
 .bhf-nav ul {
     margin-left: 5em;
     line-height: 50px;
-    font-size: 16px;
+    font-size: 1.1em;
 }
 .bhf-nav ul li {
     margin: 0 1.5em;
@@ -31,34 +34,51 @@ ul {
     margin-top: 50px;
     padding: 0;
 }
-.project_wall {
-    padding: 1em 1.5em;
+.project-wall {
+    padding: 0 1.5em 1em 1.5em;
 }
-.project_sort ul {
+.project-sort ul {
 }
-.project_sort li {
+.project-sort li {
     margin-bottom: 1.5em;
-    
     position: relative;
     text-align: center;
 }
-.project_sort li a {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top:0;
-    left:0;
+.project-sort_name {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bolder;
+    height: 80px;
+    line-height: 80px;
 }
-.project_card{
+.project-sort_name hr {
+    height: 1px;
+    margin-top: -15px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(rgba(0, 0, 0, 0.15)), to(rgba(0, 0, 0, 0)));
+    background-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    background-image: -moz-radial-gradient(circle, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    background-image: -o-radial-gradient(circle, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    background-repeat: no-repeat;
+    border: 0 none;
+}
+.project-card {
     width: 90%;
     margin: 0 auto;
     border: 1px solid #ccc;
     padding-bottom: 1em;
     border-radius: 0.7em;
-    box-shadow: 1px 1px 5px #c7c7c7;
+    box-shadow: 0 0 5px #c7c7c7;
     text-align: left;
+    cursor: pointer;
 }
-.project_name {
+.project-card:hover {
+    color : #333;
+    box-shadow: 0 0 20px #c7c7c7;
+    position: relative;
+    top: -2px;
+}
+.project-name {
     text-align: center;
     font-size: 1.8em;
     font-weight: bolder;
@@ -69,14 +89,14 @@ ul {
     background-color: #58B0DC;
     margin-bottom: 0.5em;
 }
-.project_sort li p, .project_progress {
+.project-sort li p, .project-progress {
     margin: 0 1em;
     padding: 0;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.project_more {
+.project-more {
     padding: 0.25em 1em;
     margin: 0.2em 0;
     cursor: pointer;
@@ -85,21 +105,36 @@ ul {
     border: 1px solid #eee;
     text-decoration: none;
     border-radius: 5px;
+    float: right;
 }
-.project_more:hover {
+.project-more:hover {
     opacity: 1;
     text-decoration: none;
     border: 1px solid #428bca;
 }
+.project-more:active {
+    background-color: #428bca;
+    color: white;
+}
 .bhf-nav .op_btn {
-    line-height: 45px;
+    line-height: 50px;
     cursor: pointer;
     padding: 0 0.5em;
     font-size: 1.5em;
     margin: 0 0.5em;
+    color: #dadada;
+    font-weight: bolder;
 }
 .bhf-nav .op_btn:hover {
-    color: #ddd;
+    color: #fff;
+}
+.r {
+    line-height: 38px;
+    height: 34px;
+    color: red;
+    font-size: 1.2em;
+    font-weight: bolder;
+    display: inline-block;
 }
 #addRequestDialog, #addProjectDialog {
     display: none;
@@ -110,10 +145,82 @@ ul {
     width: 900px;
     z-index: 10000;
 }
+.sort-nav {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: url(../images/sort-nav-bg.jpg) center repeat-x;
+}
+.sort-nav a {
+    display: inline-block;
+    width: 10%;
+    font-size: 1.35em;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    background: url(../images/sort-nav.jpg) 0 center no-repeat;
+}
+.sort-nav a:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+.sort-nav .active {
+    width: 80%;
+}
+#project-list {
+    padding: 1.5em 2em;
+}
+#project-list li {
+    border-bottom: 1px dashed #777;
+    padding: 1.5em 0 0.5em;
+    margin-right: 0.2em;
+    display: inline-block;
+    width: 48%;
+}
+#project-list li:hover {
+}
+#project-list span {
+    vertical-align: text-bottom;
+    padding: 0 1em;
+    font-weight: bolder;
+}
+#project-list p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#project-list a{
+    float: right;
+}
+.p-info {
+    border: 1px solid #555;
+    border-radius: 0.5em;
+    border-top-color: #bcbcbc;
+    border-left-color: #bbb;
+    border-right-color: #999;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    box-shadow: 5px 5px 10px #aaa;
+}
+#issue-box{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3em;
+}
+.post-box{
+    margin-top: 1em;
+}
 /*bootstrap override*/
  .row {
     margin: 0;
 }
 .col-sm-3 {
     padding: 0;
+}
+.modal-title {
+    font-weight: bolder;
+    font-family:"微软雅黑";
 }

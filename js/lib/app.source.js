@@ -12,6 +12,14 @@ angular.module("BHF", ["ngRoute"])
                 templateUrl: "views/report.html",
                 controller: "C_report"
             })
+            .when('/project/:id', {
+                templateUrl: "views/project.html",
+                controller: "C_project"
+            })
+            .when('/projectsort/:sort', {
+                templateUrl: "views/project-sort.html",
+                controller: "C_project_sort"
+            })
 
         $routeProvider.otherwise({      
             redirectTo: '/index'            
@@ -28,4 +36,5 @@ angular.module("BHF", ["ngRoute"])
         $httpProvider.defaults.headers.post = {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
+}).run(function($rootScope){
 })
