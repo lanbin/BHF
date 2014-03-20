@@ -192,7 +192,7 @@ ul {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-#project-list a{
+#project-list a {
     float: right;
 }
 .p-info {
@@ -205,13 +205,184 @@ ul {
     margin-top: 0.5em;
     box-shadow: 5px 5px 10px #aaa;
 }
-#issue-box{
+.issue-box {
     width: 80%;
-    margin: 0 auto;
-    margin-top: 3em;
+    display: inline-block;
+    margin-top: 2em;
+    margin-left: 230px;
 }
-.post-box{
+.issue-box-normal {
+    margin: 2em auto 0;
+    display: block;
+}
+.post-box {
+    display: none;
     margin-top: 1em;
+    padding: 1em;
+    padding-bottom: 0;
+}
+#closepb-btn {
+    margin-left: 2em;
+}
+#issue-name {
+    font-weight: bolder;
+}
+#issue-list {
+    margin: 1em 0;
+    border-top: 1px solid #ccc;
+    padding-top: 2em;
+}
+.issue-title {
+    font-size: 1.25em;
+    margin-bottom: 1em;
+}
+.issue-reply-btn {
+    float: right;
+}
+.issue-floor {
+    border-bottom: 1px solid #ddd;
+    padding:1em;
+}
+.issue-floor:hover {
+    background-color: white;
+}
+.issue-floor p {
+    line-height: 1.5em;
+    color: #777;
+}
+.issue-tag {
+    margin: 0 1em;
+    color: red;
+}
+.issue-floor .issue-content, .comment-content {
+    word-break: break-all;
+    line-height: 1.5em;
+}
+.comment-box {
+    padding:0 2em;
+    height: 0;
+    overflow: hidden;
+}
+.comment-box-show {
+    height: auto;
+}
+.comment-date {
+    position: absolute;
+    right: 1em;
+    top: 0.5em;
+}
+.commnet-floor {
+    position: relative;
+    padding: 0.5em 0;
+    border-bottom: 1px dashed #ccc;
+}
+.post-comment-box {
+    margin-top: 1em;
+}
+.post-comment-content {
+    width: 80%;
+    display: inline-block;
+    margin-right: 1em;
+}
+.post-comment-btn {
+    height: 72px;
+    width: 100px;
+    display: inline-block;
+}
+.assets-box {
+    display: inline-block;
+    width: 200px;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    top: 50px;
+    background-color: #58B0DC;
+    vertical-align: top;
+    color: white;
+}
+.openBtn {
+    position: absolute;
+    right: -21px;
+    width: 30px;
+    height: 100px;
+    top: 50%;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-radius: 0 0.5em 0.5em 0;
+    line-height: 6.5em;
+    background-color: #60BBE5;
+    color: white;
+    cursor: pointer;
+}
+.assets-box-hide {
+    margin-left: -200px;
+}
+.assets-box h3 {
+    text-align: center;
+    font-weight: bolder;
+}
+.asset-item {
+    border: 1px dashed white;
+    margin: 0.5em;
+    padding: 0.5em;
+    display: block;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+.asset-item:hover {
+    text-decoration: none;
+    color: white;
+}
+.img-txt, .img-psd, .img-rar, .img-pic, .img-doc, .img-file {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url(../images/icons.png) 0 0 no-repeat;
+}
+.img-doc {
+    background-position: 0 -35px;
+}
+.img-txt {
+    background-position: 0 -70px;
+}
+.img-rar {
+    background-position: 0 -105px;
+}
+.img-psd {
+    background-position: 0 -140px;
+}
+.img-file {
+    background-position: 0 -175px;
+}
+.assset-info {
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.assset-des {
+    word-break: break-all;
+    line-height: 1em;
+}
+.asset-list {
+    height: 92%;
+    overflow: hidden;
+}
+.projcet-panel{
+
+}
+
+.project-details{
+    width: 80%;
+    margin-left: 230px;
+
+}
+.project-details-normal{
+    margin: 0 auto;
 }
 /*bootstrap override*/
  .row {
@@ -220,7 +391,19 @@ ul {
 .col-sm-3 {
     padding: 0;
 }
-.modal-title {
+.modal-title, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: bolder;
     font-family:"微软雅黑";
+}
+.glyphicon-hand-up:before {
+    vertical-align: text-bottom;
+}
+.glyphicon:before {
+    margin-right: 5px;
+}
+.glyphicon:empty {
+    width: auto;
+}
+.mCSB_container {
+    margin-right: 10px;
 }
