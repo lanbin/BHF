@@ -1,4 +1,13 @@
 body {
+    padding-top: 60px;
+}
+
+a {
+    cursor: pointer;
+}
+
+/*
+body {
     background-color: #EEE;
     font: 1.5em/1.5em"微软雅黑";
 }
@@ -407,3 +416,4 @@ ul {
 .mCSB_container {
     margin-right: 10px;
 }
+*/

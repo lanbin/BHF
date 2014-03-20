@@ -3,30 +3,49 @@
 
 <head>
     <title>{{pageName}} -- 任务系统</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />-->
+    <link href="css/bootstrap-superhreo.css" rel="stylesheet" />
     <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" />
     <link href="css/bhf.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div id="nav" class="navbar navbar-inverse navbar-fixed-top bhf-nav">
-        <ul class="nav navbar-nav">
-            <li>
-                <a href="/#/index">首页</a>
-            </li>
-            <li>
-                <a href="/#/projectsort/1">项目分类列表</a>
-            </li>
-            <li>
-                <a href="/#/report/">报告</a>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav" style="float:right;margin-right:2em;">
-            <li class="glyphicon glyphicon-plus op_btn" data-toggle="modal" data-target="#addProjectDialog"></li>
-            <li class="glyphicon glyphicon-wrench op_btn" data-toggle="modal" data-target="#addRequestDialog"></li>
-        </ul>
+
+    <div id="nav" class="navbar navbar-default navbar-fixed-top bhf-nav">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#/" class="navbar-brand">Honey Lab</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/#/index">首页</a>
+                    </li>
+                    <li>
+                        <a href="/#/projectsort/1">项目分类列表</a>
+                    </li>
+                    <li>
+                        <a href="/#/report/">报告</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" >
+                    <li>
+                        <a data-toggle="modal" data-target="#addProjectDialog" >
+                            <span class="glyphicon glyphicon-plus"></span>
+                            <span>New Project</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#addRequestDialog" >
+                            <span class="glyphicon glyphicon-wrench"></span>
+                            <span>New Issue</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div id="container" class="container bhf-container">
         <ng-view></ng-view>
