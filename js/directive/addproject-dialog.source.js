@@ -26,6 +26,7 @@ angular.module("BHF")
 				start.datetimepicker(dpOpt);
 				start.datetimepicker("setStartDate", new Date());
 				end.datetimepicker(dpOpt);
+				end.datetimepicker("setStartDate", new Date());
 
 				//开始时间设置后，设置结束时间的起始时间
 				start.on("changeDate", function() {
