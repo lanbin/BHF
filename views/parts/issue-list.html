@@ -1,97 +1,44 @@
-<div id="issue-list">
-    <div class="issue-floor" issue-id="1">
-        <span class="glyphicon glyphicon-inbox issue-title">首页搜索栏要实时展示</span>
-        <button class="btn btn-primary glyphicon glyphicon-hand-up issue-reply-btn">回复</button>
-        <p>负责人：</p>
-        <p>标签：
-            <span class="glyphicon glyphicon-tag issue-tag">xxx</span>
-        </p>
-        <p class="issue-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-        <div class="comment-box" comment-load='0'>
-            <div class="commnet-floor">
-                <p>张三：</p>
-                <span class="comment-date">2014年3月20日10:03:58</span>
-                <p class="comment-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+<div class='row issue-list'>
+    <div class="col-md-6" ng-repeat="a in [1,2,3,4,5,6,7,9]">
+        <div class="panel panel-info"> <!-- 应该根据紧急程度改变heading颜色 -->
+            <div class="panel-heading">
+                首页大图轮播
+                <span class="label label-info pull-right">
+                    <i class="glyphicon glyphicon-user"></i>
+                    Conis
+                </span>
             </div>
-            <div class="commnet-floor">
-                <p>张三：</p>
-                <span class="comment-date">2014年3月20日10:03:58</span>
-                <p class="comment-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+            <div class="panel-body">
+                <p class="content">
+                <small>
+                   描述明显清楚的简单需求，复杂需求自动隐藏吧！ 描述明显清楚的简单需求，复杂需求自动隐藏吧！ 描述明显清楚的简单需求，复杂需求自动隐藏吧！ 描述明显清楚的简单需求，复杂需求自动隐藏吧！ 
+                </small>
+                </p>
+                <p>
+                    <span class="label label-danger">Bug</span>
+                    <span class="label label-info">修改</span>
+                    <span class="label label-success">新需求</span>
+                    <span class="label label-warning">返工</span>
+                </p>
             </div>
-            <div class="commnet-floor">
-                <p>张三：</p>
-                <span class="comment-date">2014年3月20日10:03:58</span>
-                <p class="comment-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    讨论 
+                    <span class="badge">42</span>
+                    <span class="pull-right">
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </span>
+                </div>
+                <div class="panel-body bgff pos-abs" style="display:none">
+                    <blockquote ng-repeat="b in [1,2,3]">
+                        <p>请注意把图片换成性感美女。。这是此功能成败关键。</p>
+                        <small>Lian Hsueh <cite>2014/4/1</cite></small>
+                    </blockquote>
+                    <textarea class="form-control" placeholder="Enter to post ..."></textarea>
+                </div>
             </div>
-            <postcomment></postcomment>
-        </div>
-    </div>
-    <div class="issue-floor" issue-id="1">
-        <span class="glyphicon glyphicon-inbox issue-title">首页搜索栏要实时展示</span>
-        <button class="btn btn-primary glyphicon glyphicon-hand-up issue-reply-btn">回复</button>
-        <p>负责人：</p>
-        <p>标签：
-            <span class="glyphicon glyphicon-tag issue-tag">xxx</span>
-        </p>
-        <p class="issue-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-        <div class="comment-box" comment-load='0'>
-            <div class="commnet-floor">
-                <p>张三：</p>
-                <span class="comment-date">2014年3月20日10:03:58</span>
-                <p class="comment-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-            </div>
-            <postcomment></postcomment>
-        </div>
-    </div>
-    <div class="issue-floor" issue-id="1">
-        <span class="glyphicon glyphicon-inbox issue-title">首页搜索栏要实时展示</span>
-        <button class="btn btn-primary glyphicon glyphicon-hand-up issue-reply-btn">回复</button>
-        <p>负责人：</p>
-        <p>标签：
-            <span class="glyphicon glyphicon-tag issue-tag">xxx</span>
-        </p>
-        <p class="issue-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-        <div class="comment-box" comment-load='0'>
-            <div class="commnet-floor">
-                <p>张三：</p>
-                <span class="comment-date">2014年3月20日10:03:58</span>
-                <p class="comment-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-            </div>
-            <postcomment></postcomment>
-        </div>
-    </div>
-    <div class="issue-floor" issue-id="1">
-        <span class="glyphicon glyphicon-inbox issue-title">首页搜索栏要实时展示</span>
-        <button class="btn btn-primary glyphicon glyphicon-hand-up issue-reply-btn">回复</button>
-        <p>负责人：</p>
-        <p>标签：
-            <span class="glyphicon glyphicon-tag issue-tag">xxx</span>
-        </p>
-        <p class="issue-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-        <div class="comment-box" comment-load='0'>
-            <div class="commnet-floor">
-                <p>张三：</p>
-                <span class="comment-date">2014年3月20日10:03:58</span>
-                <p class="comment-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-            </div>
-            <postcomment></postcomment>
-        </div>
-    </div>
-    <div class="issue-floor" issue-id="1">
-        <span class="glyphicon glyphicon-inbox issue-title">首页搜索栏要实时展示</span>
-        <button class="btn btn-primary glyphicon glyphicon-hand-up issue-reply-btn">回复</button>
-        <p>负责人：</p>
-        <p>标签：
-            <span class="glyphicon glyphicon-tag issue-tag">xxx</span>
-        </p>
-        <p class="issue-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-        <div class="comment-box" comment-load='0'>
-            <div class="commnet-floor">
-                <p>张三：</p>
-                <span class="comment-date">2014年3月20日10:03:58</span>
-                <p class="comment-content">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-            </div>
-            <postcomment></postcomment>
+
         </div>
     </div>
 </div>

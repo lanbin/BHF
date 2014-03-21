@@ -6,6 +6,55 @@ a {
     cursor: pointer;
 }
 
+.panel-heading a {
+    font-size: 12px;
+}
+
+.well small {
+    color: #999;
+}
+
+.well .contacts span {
+    margin: 0 2px;
+}
+
+.well .text-warning {
+    color: gray;
+    padding: 1em;
+}
+
+#footer {
+    padding: 2em;
+    color: #fff;
+    font-size: .8em;
+    text-align: center;
+    text-shadow: 1px 1px 0px #222;
+}
+
+.issue-list .col-md-6 {
+    padding: 1px
+}
+
+.panel-heading .pull-right {
+    cursor: pointer;
+}
+
+.panel-body blockquote {
+    font-size: .8em;
+}
+.panel-body blockquote small {
+    color: gray;
+}
+.panel-body.bgff {
+    background-color: #3b3f51;
+}
+
+.pos-abs {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+
 /*
 body {
     background-color: #EEE;
