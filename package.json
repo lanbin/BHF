@@ -4,6 +4,7 @@
       "grunt": "",
       "grunt-contrib-watch": "",
       "grunt-contrib-connect": "",
-      "connect-livereload": ""
+      "connect-livereload": "",
+      "json-proxy": ""
   }
 }

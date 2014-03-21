@@ -1,15 +1,16 @@
-
 <div class="row">
     <h3>{{sortname}}</h3>
-
-    <div class="col-md-3">
+    <div ng-if="items.length == 0">
+        还没有此类项目...
+    </div>
+    <div ng-if="items.length > 0" class="col-md-3" ng-repeat="item in items">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">芒果TV</h3>
+                <h3 class="panel-title">{{item.title}}</h3>
             </div>
             <div class="panel-body">
-                <p>Date: xxx-xxx-xxxww</p>
-                <p>Person: xxx-xxx-xxxww</p>
+                <p>联系人: {{item.contact}}</p>
+                <p>预计开始时间: {{item.start_date}}</p>
                 <div class="progress">
                     <div class="progress-bar" style="width: 60%;">
                         完成 60% 
@@ -18,111 +19,4 @@
             </div>
         </div>
     </div>
-
-    <div class="col-md-3">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">芒果TV</h3>
-            </div>
-            <div class="panel-body">
-                <p>Date: xxx-xxx-xxxww</p>
-                <p>Person: xxx-xxx-xxxww</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 60%;">
-                        完成 60% 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">芒果TV</h3>
-            </div>
-            <div class="panel-body">
-                <p>Date: xxx-xxx-xxxww</p>
-                <p>Person: xxx-xxx-xxxww</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 60%;">
-                        完成 60% 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">芒果TV</h3>
-            </div>
-            <div class="panel-body">
-                <p>Date: xxx-xxx-xxxww</p>
-                <p>Person: xxx-xxx-xxxww</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 60%;">
-                        完成 60% 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">芒果TV</h3>
-            </div>
-            <div class="panel-body">
-                <p>Date: xxx-xxx-xxxww</p>
-                <p>Person: xxx-xxx-xxxww</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 60%;">
-                        完成 60% 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">芒果TV</h3>
-            </div>
-            <div class="panel-body">
-                <p>Date: xxx-xxx-xxxww</p>
-                <p>Person: xxx-xxx-xxxww</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 60%;">
-                        完成 60% 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">芒果TV</h3>
-            </div>
-            <div class="panel-body">
-                <p>Date: xxx-xxx-xxxww</p>
-                <p>Person: xxx-xxx-xxxww</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 60%;">
-                        完成 60% 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 </div>
-
-
-

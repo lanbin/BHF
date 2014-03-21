@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module("BHF")
-	.directive("apd", function($rootScope) {
+	.directive("apd", function($rootScope, API) {
 		var dpOpt = {
 			format: 'yyyy-mm-dd HH:ii', //时间格式
 			autoclose: true,			//点击后立刻关闭
@@ -19,7 +19,8 @@ angular.module("BHF")
 				var start = $("#project-start-date"),
 					end = $("#project-end-date"),
 					dialog = $('#addProjectDialog'),
-					addBtn = $("#addBtn");
+					addBtn = $("#addBtn"),
+					posting = false;
 
 				//配置日期选择器
 				start.datetimepicker(dpOpt);
@@ -38,9 +39,23 @@ angular.module("BHF")
 				//提交新项目
 				addBtn.on("click", function(e) {
 					dialog.find('input').attr("disabled", "disabled");
-					//post undisabled when it success and close the dialog
-					//refresh the project wall
-					$rootScope.$emit("addProjectSuccess");
+					var formData = {
+						title: $("#p-name").val(),
+						description: $("#p-description").val(),
+						contact:$("#p-contact").val(),
+						start_date: $("#p-start-date").val(),
+						end_date: $("#p-end-date").val(),
+						repos:$("#p-repos").val(),
+						creator: 'someuser',
+						timestamp: (new Date()).getTime()
+					}
+
+					API.addProject(formData).then(function(data) {
+						console.log(data)
+						$rootScope.$emit("addProjectSuccess");
+					});
+					
+					
 				});
 			}
 		}

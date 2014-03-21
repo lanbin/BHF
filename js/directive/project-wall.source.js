@@ -7,14 +7,15 @@ angular.module("BHF")
             templateUrl: "views/parts/project-wall.html",
             restrict: "E",
             scope: {
-            	sortName: "&",
-            	moreurl: "&"
+            	itemlist: "@"
             },
             replace: true,
             link: function($scope, $element, $attrs){
-            	// console.log($attrs);
-            	$scope.sortname = $attrs.sortname
-            	$scope.moreurl = $attrs.moreurl
+                //拿到是字符串
+                var sort = $.parseJSON($attrs.itemlist);
+            	$scope.sortname = sort.name
+                $scope.sortkey = sort.sortkey
+            	$scope.items = sort.items
             }
         }
     })
