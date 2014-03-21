@@ -8,6 +8,8 @@
     <!--<link href="css/bootstrap-superhreo.css" rel="stylesheet" />-->
     <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="css/messenger.css" rel="stylesheet" />
+    <link href="css/messenger-theme-future.css" rel="stylesheet" />
     <link href="css/bhf.css" rel="stylesheet" />
 </head>
 
@@ -30,15 +32,15 @@
                         <a href="/#/report/">报告</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right" >
+                <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a data-toggle="modal" data-target="#addProjectDialog" >
+                        <a data-toggle="modal" data-target="#addProjectDialog">
                             <span class="glyphicon glyphicon-plus"></span>
                             <span>New Project</span>
                         </a>
                     </li>
                     <li>
-                        <a data-toggle="modal" data-target="#addRequestDialog" >
+                        <a data-toggle="modal" data-target="#addRequestDialog">
                             <span class="glyphicon glyphicon-wrench"></span>
                             <span>New Issue</span>
                         </a>
@@ -70,6 +72,8 @@ honey.go(
         'lib_datetimepicker',
         'lib_app',
         'lib_jquery-mCustomScrollbar',
+        'lib_messenger-min',
+        'lib_messenger-theme-future',
         'controller_index',
         'controller_project',
         'controller_report',
@@ -91,6 +95,11 @@ honey.go(
     function()
     {
         angular.bootstrap(document, ['BHF']);
+
+        Messenger.options = {
+            extraClasses: 'messenger-fixed messenger-on-top',
+            theme: 'future'
+        }
     })
 </script>
 
