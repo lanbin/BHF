@@ -49,9 +49,7 @@ angular.module("BHF")
 						contact: $("#p-contact").val(),
 						start_date: $("#p-start-date").val(),
 						end_date: $("#p-end-date").val(),
-						repos: $("#p-repos").val(),
-						creator: 'someuser',
-						timestamp: (new Date()).getTime()
+						repos: $("#p-repos").val()
 					}
 
 					if (formData.title == "" ||

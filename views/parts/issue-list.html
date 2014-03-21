@@ -1,8 +1,8 @@
 <div class='row issue-list'>
-    <div class="col-md-6" ng-repeat="a in [1,2,3,4,5,6,7,9]">
-        <div class="panel panel-info"> <!-- 应该根据紧急程度改变heading颜色 -->
+    <div class="col-md-6" ng-repeat="issue in issuelist">
+        <div class="panel panel-info issue-panel" > 
             <div class="panel-heading">
-                首页大图轮播
+                {{issue.title}}
                 <span class="label label-info pull-right">
                     <i class="glyphicon glyphicon-user"></i>
                     Conis
@@ -11,26 +11,26 @@
             <div class="panel-body">
                 <p class="content">
                 <small>
-                   描述明显清楚的简单需求，复杂需求自动隐藏吧！ 描述明显清楚的简单需求，复杂需求自动隐藏吧！ 描述明显清楚的简单需求，复杂需求自动隐藏吧！ 描述明显清楚的简单需求，复杂需求自动隐藏吧！ 
+                   {{issue.content}} 
                 </small>
                 </p>
                 <p>
-                    <span class="label label-danger">Bug</span>
-                    <span class="label label-info">修改</span>
-                    <span class="label label-success">新需求</span>
-                    <span class="label label-warning">返工</span>
+                    <span ng-if="issue.type == 1" class="label label-danger">Bug</span>
+                    <span ng-if="issue.type == 2" class="label label-info">修改</span>
+                    <span ng-if="issue.type == 3" class="label label-success">新需求</span>
+                    <span ng-if="issue.type == 4" class="label label-warning">返工</span>
                 </p>
             </div>
 
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading" ng-click="openComment($event)">
                     讨论 
                     <span class="badge">42</span>
-                    <span class="pull-right">
+                    <span class="pull-right more-comment-btn">
                         <i class="glyphicon glyphicon-chevron-down"></i>
                     </span>
                 </div>
-                <div class="panel-body bgff pos-abs" style="display:none">
+                <div class="panel-body bgff pos-abs comment-box" style="display:none">
                     <blockquote ng-repeat="b in [1,2,3]">
                         <p>请注意把图片换成性感美女。。这是此功能成败关键。</p>
                         <small>Lian Hsueh <cite>2014/4/1</cite></small>

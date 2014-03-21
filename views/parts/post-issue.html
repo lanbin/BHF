@@ -3,13 +3,21 @@
         <i class="glyphicon glyphicon-plus"></i> 谨慎的发起一条TODO
     </button>
     <p style="height: 1em"></p>
-    <!--
     <div class="post-box">
         <form class="form-horizontal" role="form">
             <div class="form-group">
                 <label class="control-label col-sm-2">标题：</label>
-                <div class="col-sm-9">
+                <div class="col-sm-5">
                     <input type="text" class="form-control" id="issue-name" />
+                </div>
+                <label class="control-label col-sm-2">类型：</label>
+                <div class="col-sm-2">
+                    <select id="issue-tag" class="form-control">
+                        <option value="0">需求</option>
+                        <option value="1">bug</option>
+                        <option value="2">新需求</option>
+                        <option value="3">返工</option>
+                    </select>
                 </div>
                 <span class="r">*</span>
             </div>
@@ -26,5 +34,4 @@
             </div>
         </form>
     </div>
-    -->
 </div>

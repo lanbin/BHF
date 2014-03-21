@@ -57,6 +57,34 @@ angular.module('BHF')
 						request.then(_fn)
 					}
 				}
+			},
+			addIssue: function(projectID, data) {
+				canceler = $q.defer();
+				var request = $http.post(
+					api + 'project/' + projectID + '/issue', $.param(data), {
+						timeout: canceler.promise
+					}
+				)
+				return {
+					canceler: canceler,
+					then: function(_fn) {
+						request.then(_fn)
+					}
+				}
+			},
+			getIssue: function(projectID) {
+				canceler = $q.defer();
+				var request = $http.get(
+					api + 'project/' + projectID + '/issue', {}, {
+						timeout: canceler.promise
+					}
+				)
+				return {
+					canceler: canceler,
+					then: function(_fn) {
+						request.then(_fn)
+					}
+				}
 			}
 		}
 	})
