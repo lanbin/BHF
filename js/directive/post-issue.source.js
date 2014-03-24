@@ -138,6 +138,8 @@ angular.module("BHF")
                             $rootScope.$emit("issueposted");
                             $("#issue-name").val("");
                             $("#issue-content").val("");
+                            $(".asset-list li").removeClass("selected");
+                            assetSelectedArr = [];
                             Messenger().post({
                                 message: "发帖成功",
                                 showCloseButton: true,
