@@ -5,6 +5,9 @@ body {
 *:focus {
     outline: none;
 }
+textarea {
+    resize: none;
+}
 a {
     cursor: pointer;
 }
@@ -79,6 +82,10 @@ a {
     margin-top: 1em;
     padding: 1em;
     padding-bottom: 0;
+}
+.comment-list {
+    height: 346px;
+    overflow-y: scroll;
 }
 /*
 body {

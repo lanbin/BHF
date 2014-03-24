@@ -85,6 +85,9 @@ angular.module('BHF')
 						request.then(_fn)
 					}
 				}
+			},
+			postComment: function(formData) {
+				
 			}
 		}
 	})

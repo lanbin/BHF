@@ -31,11 +31,13 @@
                     </span>
                 </div>
                 <div class="panel-body bgff pos-abs comment-box" style="display:none">
-                    <blockquote ng-repeat="b in [1,2,3]">
+                    <div class="comment-list">
+                    <blockquote ng-repeat="b in [1,2,3,4,5]">
                         <p>请注意把图片换成性感美女。。这是此功能成败关键。</p>
                         <small>Lian Hsueh <cite>2014/4/1</cite></small>
                     </blockquote>
-                    <textarea class="form-control" placeholder="Enter to post ..."></textarea>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter to post ..." ng-keyup="postComment($event)"></input>
                 </div>
             </div>
 
