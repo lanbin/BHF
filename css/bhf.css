@@ -1,4 +1,3 @@
-
 body {
     padding-top: 60px;
 }
@@ -10,6 +9,9 @@ textarea {
 }
 a {
     cursor: pointer;
+}
+ul{
+    list-style: none;
 }
 .panel-heading a {
     font-size: 12px;
@@ -82,10 +84,74 @@ a {
     margin-top: 1em;
     padding: 1em;
     padding-bottom: 0;
+    position: relative;
+    overflow: hidden;
 }
 .comment-list {
     max-height: 346px;
     overflow-y: scroll;
+}
+.update-panel{
+    position: absolute;
+    top: 0;
+    left: -1170px;
+    bottom: 0;
+    width: 1170px;
+    background-color: #2B3E50;
+    display: block;
+    z-index: 10;
+    overflow-y: scroll;
+    -webkit-animation: closePanel 0.5s;
+}
+.update-panel-show{
+    left: 0;
+    -webkit-animation: showPanel 0.5s;
+}
+@-webkit-keyframes showPanel
+{
+    from {left: -1170px;}
+    to {left: 0;}
+}
+@-webkit-keyframes closePanel
+{
+    from {left: 0;}
+    to {left: -1170px;}
+}
+.img-txt, .img-psd, .img-rar, .img-pic, .img-doc, .img-file {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url(../images/icons.png) 0 0 no-repeat;
+}
+.img-doc {
+    background-position: 0 -35px;
+}
+.img-txt {
+    background-position: 0 -70px;
+}
+.img-rar {
+    background-position: 0 -105px;
+}
+.img-psd {
+    background-position: 0 -140px;
+}
+.img-file {
+    background-position: 0 -175px;
+}
+.asset-list li{
+    cursor: pointer;
+    position: relative;
+}
+.asset-list li .seleted-icon{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-size: 16px;
+    color: #5CB85C;
+    display: none;
+}
+.asset-list li.selected .seleted-icon{
+    display: block;
 }
 /*
 body {
@@ -424,27 +490,7 @@ ul {
     text-decoration: none;
     color: white;
 }
-.img-txt, .img-psd, .img-rar, .img-pic, .img-doc, .img-file {
-    width: 32px;
-    height: 32px;
-    display: inline-block;
-    background: url(../images/icons.png) 0 0 no-repeat;
-}
-.img-doc {
-    background-position: 0 -35px;
-}
-.img-txt {
-    background-position: 0 -70px;
-}
-.img-rar {
-    background-position: 0 -105px;
-}
-.img-psd {
-    background-position: 0 -140px;
-}
-.img-file {
-    background-position: 0 -175px;
-}
+
 .assset-info {
     width: 120px;
     height: 30px;

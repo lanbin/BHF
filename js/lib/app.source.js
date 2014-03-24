@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module("BHF", ["ngRoute"])
+angular.module("BHF", ["ngRoute", "angularFileUpload"])
     .config(function($routeProvider, $httpProvider){
     
         $routeProvider

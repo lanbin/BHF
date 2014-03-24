@@ -10,9 +10,6 @@ angular.module("BHF")
             replace: true,
             link: function($scope, $element, $attrs){
 
-                $(".asset-list").mCustomScrollbar({
-                    
-                });
             	$(".openBtn").on("click", function(){
                     status = !status;
                     $rootScope.$emit("assetbox",{status: status});

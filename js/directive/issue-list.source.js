@@ -1,6 +1,11 @@
 'use strict'
 
 angular.module("BHF")
+    .filter('contentFormat', function($sce) {
+        return function(input) {
+            return $sce.trustAsHtml(input.replace(/\n/g,"<br />"))
+        }
+    })
     .directive("issuelist", function(API) {
         var posting = false,
             infinityFar = 10000000;
@@ -32,7 +37,6 @@ angular.module("BHF")
 
                 $scope.postComment = function($event) {
                     if ($event.keyCode == 13) {
-                        //post
                         posting = true;
 
                         var formData = {
@@ -70,10 +74,8 @@ angular.module("BHF")
                     API.getComment(oiId).then(function(data) {
                         $scope.comments = data.data.items;
                         setTimeout(function() {
-                            //优化，优雅的移动到这个位置，needtoupdate
-                            $(window).scrollTop($(cb).offset().top)
-                            //快速地定位
-                            $(".comment-list").scrollTop(infinityFar)
+                            window.smoothScroll($(cb).offset().top);
+                            $(".comment-list").scrollTop(infinityFar);
                         }, 50)
                     });
                 }

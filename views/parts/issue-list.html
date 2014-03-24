@@ -10,8 +10,7 @@
             </div>
             <div class="panel-body">
                 <p class="content">
-                <small>
-                   {{issue.content}} 
+                <small ng-bind-html="issue.content | contentFormat">
                 </small>
                 </p>
                 <p>

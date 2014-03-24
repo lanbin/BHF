@@ -7,14 +7,6 @@ angular.module("BHF")
             restrict: "E",
             replace: true,
             link: function($scope, $element, $attrs){
-
-            	$rootScope.$on("assetbox", function(event, $params){
-                    if($params.status){
-                        $(".issue-box").removeClass("issue-box-normal")
-                    }else{
-                        $(".issue-box").addClass("issue-box-normal")
-                    }
-                })
             }
         }
     })

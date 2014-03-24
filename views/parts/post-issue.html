@@ -1,9 +1,72 @@
-<div class="row">
-    <button type="button" class="btn btn-success btn-lg btn-block" id="callpb-btn">
+<div class="row post-issue">
+    <button type="button" class="btn btn-success btn-lg btn-block" id="callpb-btn" ng-click="show()">
         <i class="glyphicon glyphicon-plus"></i> 谨慎的发起一条TODO
     </button>
     <p style="height: 1em"></p>
+    <a href="#" id="post-box"></a>
     <div class="post-box">
+        <div ng-show="updatePanelShow" class="update-panel">
+            <input ng-file-select type="file" name="asset" multiple style="display:inline-block"/>
+            <button ng-click="updatePanelHide()" class="btn btn-success"  style="display:inline-block;padding: 2px 16px;">取消</button>
+            <div class="col-sm-12">
+                <p>上传队列长度: {{ uploader.queue.length }}</p>
+                <table class="table" ng-show="uploader.queue.length>0">
+                    <thead>
+                        <tr>
+                            <th width="50%">文件名</th>
+                            <th ng-show="uploader.isHTML5">文件大小</th>
+                            <th ng-show="uploader.isHTML5">上传进度</th>
+                            <th>上传结果</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in uploader.queue">
+                            <td><strong>{{ item.file.name }}</strong></td>
+                            <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                            <td ng-show="uploader.isHTML5">
+                                <div class="progress" style="margin-bottom: 0;">
+                                    <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                            </td>
+                            <td nowrap>
+                                <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                    <span class="glyphicon glyphicon-upload"></span>上传
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                    <span class="glyphicon glyphicon-ban-circle"></span>取消
+                                </button>
+                                <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                    <span class="glyphicon glyphicon-trash"></span>移除
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div ng-show="uploader.queue.length>0">
+                    <p>
+                        总体上传进度:
+                        <div class="progress" style="">
+                            <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                    </p>
+                    <button type="button" class="btn btn-success btn-s" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+                        <span class="glyphicon glyphicon-upload"></span> 上传所有
+                    </button>
+                    <button type="button" class="btn btn-warning btn-s" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+                        <span class="glyphicon glyphicon-ban-circle"></span> 取消所有
+                    </button>
+                    <button type="button" class="btn btn-danger btn-s" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+                        <span class="glyphicon glyphicon-trash"></span>移除所有
+                    </button>
+                </div>
+            </div>
+        </div>
         <form class="form-horizontal" role="form">
             <div class="form-group">
                 <label class="control-label col-sm-2">标题：</label>
@@ -23,13 +86,26 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">内容：</label>
                 <div class="col-sm-9">
-                    <textarea class="form-control" rows=3 id="issue-content" /></textarea>
+                    <textarea class="form-control" rows=3 id="issue-content" ng-keydown="t_keydown($event)" ng-keyup="t_keyup($event)"/></textarea>
                 </div>
                 <span class="r">*</span>
             </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">选择素材：</label>
+                <div class="col-sm-10">
+                   <ul class="asset-list clearfix">
+                       <li ng-repeat="asset in assetList" class="col-sm-3" ng-click="assetSelect($event)"><i class="img-{{asset.original_name|findFileType}}"></i><div>{{asset.original_name}}</div>
+                       <i class="glyphicon glyphicon-ok-circle seleted-icon"></i>
+                       </li>
+                   </ul>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-danger col-sm-2 col-sm-offset-1" id="updateAssetBtn" ng-click="updateAssetBtn()">上传素材</button>
+            </div>
             <div class="form-group" style="text-align:center">
-                <button type="button" class="btn btn-primary" id="post-issue-btn">发帖</button>
-                <button type="button" class="btn btn-default" id="closepb-btn">收起</button>
+                <button type="button" class="btn btn-primary" id="post-issue-btn" ng-click="postIssue()">发帖</button>
+                <button type="button" class="btn btn-default" id="closepb-btn" ng-click="close()">收起</button>
             </div>
         </form>
     </div>

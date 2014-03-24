@@ -127,6 +127,20 @@ angular.module('BHF')
                         request.then(_fn)
                     }
                 }
+            },
+            getAsset: function(projectID){
+                canceler = $q.defer();
+                var request = $http.get(
+                    api + 'project/' + projectID + '/asset', {}, {
+                        timeout: canceler.promise
+                    }
+                )
+                return {
+                    canceler: canceler,
+                    then: function(_fn) {
+                        request.then(_fn)
+                    }
+                }
             }
         }
     })
