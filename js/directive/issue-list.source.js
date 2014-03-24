@@ -74,7 +74,7 @@ angular.module("BHF")
                     API.getComment(oiId).then(function(data) {
                         $scope.comments = data.data.items;
                         setTimeout(function() {
-                            window.smoothScroll($(cb).offset().top);
+                            window.smoothScroll($(cb).offset().top - 50);
                             $(".comment-list").scrollTop(infinityFar);
                         }, 50)
                     });
