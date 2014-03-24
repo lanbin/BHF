@@ -61,8 +61,6 @@ angular.module("BHF")
                             posting = false;
                         });
                 })
-
-                //检测表单，提交，广播事件
             }
         }
     })

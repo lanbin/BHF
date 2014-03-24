@@ -5,7 +5,7 @@
                 {{issue.title}}
                 <span class="label label-info pull-right">
                     <i class="glyphicon glyphicon-user"></i>
-                    Conis
+                    {{issue.owner}}
                 </span>
             </div>
             <div class="panel-body">
@@ -25,16 +25,16 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     讨论 
-                    <span class="badge">42</span>
+                    <span class="badge"></span>
                     <span class="pull-right" ng-click="openComment($event)">
                         <i class="glyphicon glyphicon-chevron-down"></i>
                     </span>
                 </div>
                 <div class="panel-body bgff pos-abs comment-box" style="display:none">
                     <div class="comment-list">
-                    <blockquote ng-repeat="b in [1,2,3,4,5]">
-                        <p>请注意把图片换成性感美女。。这是此功能成败关键。</p>
-                        <small>Lian Hsueh <cite>2014/4/1</cite></small>
+                    <blockquote ng-repeat="c in comments">
+                        <p>{{c.content}}</p>
+                        <small>{{c.creator}} <cite>{{c.timestamp|date:'yyyy-MM-dd HH:mm:ss'}}</cite></small>
                     </blockquote>
                     </div>
                     <input type="text" class="form-control" placeholder="Enter to post ..." ng-keyup="postComment($event)"></input>

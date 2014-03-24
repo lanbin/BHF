@@ -84,7 +84,7 @@ a {
     padding-bottom: 0;
 }
 .comment-list {
-    height: 346px;
+    max-height: 346px;
     overflow-y: scroll;
 }
 /*

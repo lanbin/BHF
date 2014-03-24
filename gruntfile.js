@@ -26,13 +26,14 @@ module.exports = function(grunt) {
                             }),
                             require('json-proxy').initialize({
                                 //http://172.28.52.97:14318/api/project
+                                //http://172.16.102.146:14318/
                                 proxy: {
                                     forward: {
-                                        '/api': 'http://172.28.52.97:14318/'
+                                        '/api': 'http://172.16.102.146:14318/'
                                     },
                                     headers: {
-                                        'Host': '172.28.52.97:14318',
-                                        'Origin': 'http://172.28.52.97:14318',
+                                        'Host': '172.16.102.146:14318',
+                                        'Origin': 'http://172.16.102.146:14318',
                                         'X-Requested-With': 'XMLHttpRequest'
                                     }
                                 }
