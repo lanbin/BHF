@@ -2,7 +2,7 @@
 
 angular.module("BHF", ["ngRoute", "angularFileUpload"])
     .config(function($routeProvider, $httpProvider){
-    
+                    
         $routeProvider
             .when('/index', {
                 templateUrl: "views/index.html",
@@ -20,6 +20,10 @@ angular.module("BHF", ["ngRoute", "angularFileUpload"])
                 templateUrl: "views/project-sort.html",
                 controller: "C_project_sort"
             })
+            .when('/user', {
+                templateUrl: "views/user.html",
+                controller: "C_user"
+            })
 
         $routeProvider.otherwise({      
             redirectTo: '/index'            
@@ -36,5 +40,10 @@ angular.module("BHF", ["ngRoute", "angularFileUpload"])
         $httpProvider.defaults.headers.post = {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
-}).run(function($rootScope){
+}).run(function($rootScope, API){
+    API.getUser().then(function(data){
+        if(!data.data){
+
+        }
+    });
 })

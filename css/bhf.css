@@ -153,6 +153,10 @@ ul{
 .asset-list li.selected .seleted-icon{
     display: block;
 }
+.login-box h3{
+    margin: 80px 0;
+    position: relative;
+}
 /*
 body {
     background-color: #EEE;

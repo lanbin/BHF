@@ -141,6 +141,60 @@ angular.module('BHF')
                         request.then(_fn)
                     }
                 }
+            },
+            getUser: function(){
+                canceler = $q.defer();
+                var request = $http.get(
+                    api + 'mine', {}, {
+                        timeout: canceler.promise
+                    }
+                )
+                return {
+                    canceler: canceler,
+                    then: function(_fn) {
+                        request.then(_fn)
+                    }
+                }
+            },
+            register: function(formData){
+                canceler = $q.defer();
+                var request = $http.post(
+                    api + 'mine', $.param(formData), {
+                        timeout: canceler.promise
+                    }
+                )
+                return {
+                    canceler: canceler,
+                    result: function(_sfn, _efn) {
+                        request.success(_sfn).error(_efn);
+                    }
+                }
+            },
+            login:function(formData){
+                canceler = $q.defer();
+                var request = $http.put(
+                    api + 'mine', $.param(formData), {
+                        timeout: canceler.promise
+                    }
+                )
+                return {
+                    canceler: canceler,
+                    r: request
+                }
+            },
+            logout:function(){
+                canceler = $q.defer();
+                var request = $http.delete(
+                    api + 'mine', {}, {
+                        timeout: canceler.promise
+                    }
+                )
+                return {
+                    canceler: canceler,
+                    then: function(_fn) {
+                        request.then(_fn)
+                    }
+                }
             }
         }
     })

@@ -1,0 +1,56 @@
+<div class="row login-box">
+    <form class="form-horizontal col-sm-6" role="form">
+        <h3>登录</h3>
+        <div class="form-group">
+            <label class="control-label col-sm-2">用户名：</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" placeholder="用户名" id="p-username" />
+            </div>
+            <span class="r">*</span>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">密码:</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" placeholder="密码" id="p-passwd" />
+            </div>
+            <span class="r">*</span>
+        </div>
+        <div class="form-group">
+        	<button class="btn btn-primary col-sm-offset-3" ng-click="login()">登录</button>
+        </div>
+    </form>
+    <form class="form-horizontal col-sm-6" role="form">
+        <h3>注册</h3>
+        <div class="form-group">
+            <label class="control-label col-sm-2">用户名：</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" placeholder="用户名" id="r-user-name" />
+            </div>
+            <span class="r">*</span>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">密码:</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" placeholder="密码" id="r-passwd" />
+            </div>
+            <span class="r">*</span>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">确认密码:</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" placeholder="确认密码" id="r-passwd-confirm" />
+            </div>
+            <span class="r">*</span>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">电子邮件:</label>
+            <div class="col-sm-6">
+                <input type="email" class="form-control" placeholder="确认密码" id="r-email" />
+            </div>
+            <span class="r">*</span>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary col-sm-offset-3" ng-click="register()">注册</button>
+        </div>
+    </form>
+</div>

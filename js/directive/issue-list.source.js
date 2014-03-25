@@ -70,6 +70,10 @@ angular.module("BHF")
                     }
                 }
 
+                $scope.addDeveloper = function(){
+                    console.log("asdasd")
+                }
+
                 function getComment(oiId) {
                     API.getComment(oiId).then(function(data) {
                         $scope.comments = data.data.items;
